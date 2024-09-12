@@ -18,8 +18,9 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
-  const root = document.documentElement;
   useEffect(() => {
+    const root = document.documentElement;
+    
     if (theme === "dark") {
       root.classList.add("dark");
     } else {

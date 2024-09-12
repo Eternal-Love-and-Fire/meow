@@ -6,7 +6,6 @@ import { BurgerMenu } from "./components/ButgerMenu";
 import { Logotype } from "./components/Logotype";
 import { Menubar } from "./components/Menubar";
 import { ModalMenu } from "./components/ModalMenu";
-import { Input } from "../Input";
 import { ThemeToggle } from "../ThemeToggle";
 import { Auth } from "./components/Auth";
 
