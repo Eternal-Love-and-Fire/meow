@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Logotype } from "./Logotype";
 import { Menubar } from "./Menubar";
-import { useTheme } from "@/app/context/ThemeProvider";
+import { useTheme } from "@/app/contexts/ThemeProvider";
 
 const modalVariants = {
   hidden: { x: "-100%", opacity: 0 },
