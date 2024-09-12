@@ -1,11 +1,14 @@
 import { Header } from "@/components/header/Header";
+import { HeaderAuth } from "@/components/header/HeaderAuth";
+import { HeaderCenter } from "@/components/header/HeaderCenter";
 
 
 function Home() {
   return (
     <div className="min-w-screen">
       <Header />
-      <main></main>
+      <HeaderAuth />
+      <HeaderCenter />
       <footer></footer>
     </div>
   );
