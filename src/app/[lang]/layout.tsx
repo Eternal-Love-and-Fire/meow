@@ -35,7 +35,7 @@ export default async function RootLayout({
   const dictionary = await getDictionary(params.lang);
 
   return (
-    <html lang={params.lang} className="min-h-screen w-full overflow-hidden">
+    <html lang={params.lang} className="min-h-screen w-full overflow-hidden dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen w-full antialiased bg-white text-black dark:bg-black dark:text-white`}
       >
