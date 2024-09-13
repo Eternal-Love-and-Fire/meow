@@ -8,9 +8,10 @@ import { WrapperSidebars } from "@/components/wrappers/WrapperSidebars";
 const Page = () => {
   return (
     <WrapperSidebars>
-      <WrapperInnerWindow
-        desc={{ title: "Headers", explanation: "Headers components" }}
-      >
+      <WrapperInnerWindow desc={{ title: "Headers", explanation: "Headers components" }}>
+        <p>asd</p>
+      </WrapperInnerWindow>
+      <div>
         <div className="min-w-screen">
           <Header />
           <div className="border-b-2 border-black dark:border-white w-full h-2"></div>
@@ -20,7 +21,7 @@ const Page = () => {
           <div className="border-b-2 border-black dark:border-white w-full h-2"></div>
           <Header4 />
         </div>
-      </WrapperInnerWindow>
+      </div>
     </WrapperSidebars>
   );
 };

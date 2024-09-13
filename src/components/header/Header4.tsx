@@ -7,6 +7,7 @@ import { Menubar } from "./components/Menubar";
 import { ModalMenu } from "./components/ModalMenu";
 import { ThemeToggle } from "../ThemeToggle";
 import { Auth } from "./components/Auth";
+import { Logotype } from "./components/Logotype";
 
 const Header4 = () => {
   const [showModalMenu, setShowModalMenu] = useState<boolean>(false);
@@ -17,9 +18,9 @@ const Header4 = () => {
 
   const items: Array<{ text: string; href: string; state?: "active" }> = [
     {
-      text: "4",
+      text: "Home",
       href: "/home",
-      state: "active",
+      // state: "active",
     },
     {
       text: "About",
@@ -36,9 +37,11 @@ const Header4 = () => {
   ];
 
   return (
-    <header className="container mx-auto px-4 lg:px-0 py-6 flex items-center">
+    <header className="mx-auto px-4 lg:px-0 py-6 flex items-center border-b-2 border-black dark:border-white">
       <div className="w-full flex lg:grid grid-cols-3 items-center justify-between lg:justify-end gap-6">
-        <div className="hidden lg:block"></div>
+        <div className="hidden lg:flex justify-center">
+          <Logotype />
+        </div>
         <div className="flex justify-center">
           <BurgerMenu
             showModalMenu={showModalMenu}
@@ -54,8 +57,8 @@ const Header4 = () => {
             items={items}
           />
         </div>
-        <div className="flex justify-end items-center gap-6">
-          <Auth aria-label="User authentication links" />
+        <div className="flex justify-center items-center gap-6">
+          {/* <Auth aria-label="User authentication links" /> */}
           <ThemeToggle aria-label="Toggle dark/light theme" />
           <Link href={`/`}>
             <svg

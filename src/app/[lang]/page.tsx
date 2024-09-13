@@ -1,18 +1,11 @@
-import { Header } from "@/components/header/Header";
-import { Header4 } from "@/components/header/Header4";
-import { HeaderAuth } from "@/components/header/HeaderAuth";
-import { HeaderCenter } from "@/components/header/HeaderCenter";
 
 function Home() {
   return (
-    <div className="min-w-screen">
-      <Header />
-      <div className="border-b-2 border-black dark:border-white w-full h-2"></div>
-      <HeaderAuth />
-      <div className="border-b-2 border-black dark:border-white w-full h-2"></div>
-      <HeaderCenter />
-      <div className="border-b-2 border-black dark:border-white w-full h-2"></div>
-      <Header4 />
+    <div className="min-h-screen w-full flex flex-col">
+      <main className="flex-1 flex flex-col items-center justify-center">
+        <div className="text-3xl tracking-widest">Copy&Paste, bruh.</div>
+        <div className="text-xl opacity-50">Copy & paste</div>
+      </main>
     </div>
   );
 }

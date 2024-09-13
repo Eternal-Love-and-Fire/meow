@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "../contexts/ThemeProvider";
 import { getDictionary } from "@/dictionaries";
+import { Header4 } from "@/components/header/Header4";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -26,19 +27,22 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params
+  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: string}
+  params: { lang: string };
 }>) {
   const dictionary = await getDictionary(params.lang);
 
   return (
-    <html lang={params.lang}>
+    <html lang={params.lang} className="min-h-screen w-full overflow-hidden">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black dark:bg-black dark:text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen w-full antialiased bg-white text-black dark:bg-black dark:text-white`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Header4 />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
