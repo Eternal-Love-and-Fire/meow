@@ -6,7 +6,6 @@ import { BurgerMenu } from "./components/ButgerMenu";
 import { Menubar } from "./components/Menubar";
 import { ModalMenu } from "./components/ModalMenu";
 import { ThemeToggle } from "../ThemeToggle";
-import { Auth } from "./components/Auth";
 import { Logotype } from "./components/Logotype";
 
 const Header4 = () => {
@@ -58,7 +57,6 @@ const Header4 = () => {
           />
         </div>
         <div className="flex justify-center items-center gap-6">
-          {/* <Auth aria-label="User authentication links" /> */}
           <ThemeToggle aria-label="Toggle dark/light theme" />
           <Link href={`/`}>
             <svg
