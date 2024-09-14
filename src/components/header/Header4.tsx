@@ -17,13 +17,13 @@ const Header4 = () => {
 
   const items: Array<{ text: string; href: string; state?: "active" }> = [
     {
-      text: "Home",
-      href: "/home",
+      text: "Docs",
+      href: "/docs",
       // state: "active",
     },
     {
-      text: "About",
-      href: "/about",
+      text: "Components",
+      href: "/components",
     },
     {
       text: "Contact",
@@ -36,7 +36,7 @@ const Header4 = () => {
   ];
 
   return (
-    <header className="mx-auto px-4 lg:px-0 py-6 flex items-center border-b-2 border-black dark:border-white">
+    <header className="mx-auto px-4 lg:px-0 py-6 flex items-center">
       <div className="w-full flex lg:grid grid-cols-3 items-center justify-between lg:justify-end gap-6">
         <div className="hidden lg:flex justify-center">
           <Logotype />

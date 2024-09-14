@@ -26,40 +26,32 @@ const paths = [
 
 const WrapperSidebars = ({ children }: WrapperSidebarsProps) => {
   return (
-    <div className="w-full flex justify-between">
-      <aside className="min-w-60 h-full p-4">
-        <ul>
-          <li className="font-semibold">Getting Started</li>
-          <li>
-            <ul className="p-2">
-              {paths.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.path}
-                    className="capitalize opacity-80 border-b-2 border-transparent hover:border-black hover:dark:border-white duration-500"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </li>
-        </ul>
-      </aside>
-      <div className="flex flex-1 justify-center">
-        <div className="lg:w-2/3">{children}</div>
+    <div className="mx-auto px-4 lg:px-0 py-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <aside className="col-span-1 flex justify-center">
+          <ul>
+            <li className="font-semibold">Getting Started</li>
+            <li>
+              <ul className="p-2">
+                {paths.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.path}
+                      className="capitalize opacity-80 border-b-2 border-transparent hover:border-black hover:dark:border-white duration-500"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          </ul>
+        </aside>
+
+        <div className="col-span-1 flex justify-center">{children}</div>
+
+        <div className="col-span-1">{/* Add content here if needed */}</div>
       </div>
-      <aside className="min-w-60 h-full p-4">
-        <p>On this page</p>
-        <ul>
-          <li>Header 1</li>
-          <li>Header 2</li>
-          <li>Header 3</li>
-          <li>Header 4</li>
-          <li>Header 5</li>
-          <li>Header 6</li>
-        </ul>
-      </aside>
     </div>
   );
 };

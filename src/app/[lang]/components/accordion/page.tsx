@@ -1,3 +1,5 @@
+// components/Accordion.tsx
+
 "use client";
 
 import { useState } from "react";
@@ -10,24 +12,26 @@ interface AccordionItemProps {
   isOpen: boolean;
   onClick: () => void;
 }
+
 interface Item {
-    title: string;
-    content: string;
-  }
+  title: string;
+  content: string;
+}
+
 const items: Item[] = [
-    {
-      title: "Is it accessible?",
-      content: "Yes. It adheres to the WAI-ARIA design pattern.",
-    },
-    {
-      title: "Is it styled?",
-      content: "Yes. It comes with default styles that match the aesthetic.",
-    },
-    {
-      title: "Is it animated?",
-      content: "Yes. It's animated by default with Framer Motion.",
-    },
-  ];
+  {
+    title: "Is it accessible?",
+    content: "Yes. It adheres to the WAI-ARIA design pattern.",
+  },
+  {
+    title: "Is it styled?",
+    content: "Yes. It comes with default styles that match the aesthetic.",
+  },
+  {
+    title: "Is it animated?",
+    content: "Yes. It's animated by default with Framer Motion.",
+  },
+];
 
 const AccordionItem: React.FC<AccordionItemProps> = ({
   id,
@@ -36,7 +40,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   isOpen,
   onClick,
 }) => (
-  <div className="border-b">
+  <div className="w-96 border-b">
     <h3>
       <button
         id={`${id}-header`}
@@ -51,7 +55,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
             isOpen ? "rotate-90" : ""
           }`}
         >
-          <div className="w-2 h-2 border-b-2 border-r-2 transform -rotate-45 border-current"></div>
+          <div className="w-2 h-2 border-b-2 border-r-2 transform rotate-45 border-current"></div>
         </div>
       </button>
     </h3>
@@ -71,15 +75,14 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className="overflow-hidden"
         >
-          <div className="p-4">{content}</div>
+          <div className="p-4 break-words">{content}</div>
         </motion.div>
       )}
     </AnimatePresence>
   </div>
 );
 
-
-const Page: React.FC = () => {
+const Accordion: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
@@ -87,7 +90,7 @@ const Page: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="w-full">
       {items.map((item, index) => (
         <AccordionItem
           key={index}
@@ -102,4 +105,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default Accordion;
